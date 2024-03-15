@@ -1,9 +1,9 @@
 const config = {
-  url: "http://localhost:4000"
+  url: "https://task-manager-app-server-beta.vercel.app"
 };
 
 export default config;
 
 // http://localhost:4000
 
-// https://notes-dynamic-server.vercel.app
+// https://task-manager-app-server-beta.vercel.app
