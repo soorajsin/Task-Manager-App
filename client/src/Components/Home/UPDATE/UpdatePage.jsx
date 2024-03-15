@@ -87,7 +87,7 @@ const UpdatePage = () => {
       <div className="reg">
         <div className="regCon">
           <div className="form">
-            <h2>Welcome to Edit Notes</h2>
+            <h2>Welcome to Edit Task</h2>
           </div>
           <div className="form">
             <label htmlFor="title">Title</label>
