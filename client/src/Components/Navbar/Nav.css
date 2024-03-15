@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  margin: auto;
+  width: 1200px;
+  /* background-color: red; */
+}
+
+.nav .navCon {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .navCon .tab {
+  position: relative;
+  margin-top: 5px;
+}
+
+.nav .navCon .tab .tabNav {
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav .navCon .tab .tabNav img {
+  width: 60px;
+  height: 60px;
+}
+
+.nav .navCon .tab .tabNav .avaStyle {
+  background-color: #fff;
+  color: red;
+  font-size: 25px;
+}
+
+.nav .navCon .tab:hover {
+  transform: scale(1.1);
+  color: #f5f5f5;
+}
+
+.nav .navCon .tab .ava {
+  width: 300px;
+  position: absolute;
+  right: 0px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav .navCon .tab:hover .ava {
+  display: block;
+}
+
+.nav .navCon .tab .ava .avaCon {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.nav .navCon .tab .ava .avaCon .avatab {
+  padding: 10px;
+  background-color: #fff;
+  font-size: 30px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  word-break: break-all;
+  cursor: pointer;
+}
+.nav .navCon .tab .ava .avaCon .avatab:hover {
+  background-color: #f5f5f5;
+}
+
+.nav .navCon .tab .ava .avaCon .avatab .avatabNav {
+  text-decoration: none;
+  color: black;
+}
