@@ -29,7 +29,8 @@ const UpdatePage = () => {
       } else {
         setSendData({
           title: checkIndex.title,
-          description: checkIndex.description
+          description: checkIndex.description,
+          date: checkIndex.date
         });
       }
     } else {
@@ -43,7 +44,8 @@ const UpdatePage = () => {
 
   const [sendData, setSendData] = useState({
     title: "",
-    description: ""
+    description: "",
+    date: ""
   });
 
   const changedata = (e) => {
@@ -55,8 +57,8 @@ const UpdatePage = () => {
   console.log(sendData);
 
   const updateNotesItem = async () => {
-    const { title, description } = sendData;
-    if (!title || !description) {
+    const { title, description, date } = sendData;
+    if (!title || !description || !date) {
       alert("Please enter all fields");
     } else {
       console.log("done");
@@ -109,6 +111,17 @@ const UpdatePage = () => {
               cols="30"
               rows="2"
             ></textarea>
+          </div>
+          <div className="form">
+            <label htmlFor="date">Date</label>
+            <br />
+            <input
+              type="date"
+              name="date"
+              value={sendData.date}
+              onChange={changedata}
+              placeholder="Enter here ..."
+            />
           </div>
           <div className="form">
             <button onClick={updateNotesItem}>Submit</button>

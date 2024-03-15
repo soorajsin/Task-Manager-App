@@ -8,7 +8,8 @@ const AddPage = () => {
   const pageNavigate = useNavigate();
   const [sendData, setSendData] = useState({
     title: "",
-    description: ""
+    description: "",
+    date:""
   });
 
   const changedata = (e) => {
@@ -22,8 +23,8 @@ const AddPage = () => {
   const submitToAdd = async (e) => {
     e.preventDefault();
 
-    const { title, description } = sendData;
-    if (!title || !description) {
+    const { title, description, date } = sendData;
+    if (!title || !description || !date) {
       alert("Please enter all fields");
     } else {
       console.log("add");
@@ -52,7 +53,7 @@ const AddPage = () => {
       <div className="reg">
         <div className="regCon">
           <div className="form">
-            <h2>Welcome to Add Notes</h2>
+            <h2>Welcome to My Task</h2>
           </div>
           <div className="form">
             <label htmlFor="title">Title</label>
@@ -76,6 +77,17 @@ const AddPage = () => {
               cols="30"
               rows="2"
             ></textarea>
+          </div>
+          <div className="form">
+            <label htmlFor="date">Date</label>
+            <br />
+            <input
+              type="date"
+              name="date"
+              onChange={changedata}
+              value={sendData.date}
+              placeholder="Enter title here ..."
+            />
           </div>
           <div className="form">
             <button onClick={submitToAdd}>Submit</button>

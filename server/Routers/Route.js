@@ -254,7 +254,8 @@ router.put("/update", authentication, async (req, res) => {
         } else {
           // console.log(entry);
           (user.addNotes[entry].title = sendData.title),
-            (user.addNotes[entry].description = sendData.description);
+            (user.addNotes[entry].description = sendData.description),
+            (user.addNotes[entry].date = sendData.date);
 
           const updatedUser = await user.save();
           // console.log(updatedUser);

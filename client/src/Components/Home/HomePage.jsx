@@ -93,6 +93,7 @@ const HomePage = () => {
           <div className="show">
             {filteredNotes.map((addNote, index) => (
               <div key={index} className="show-data">
+                <h3>{addNote.date}</h3>
                 <h3>{addNote.title}</h3>
                 <p>{addNote.description}</p>
                 <div className="action">

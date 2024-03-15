@@ -26,7 +26,8 @@ const userSchema = mongoose.Schema({
   addNotes: [
     {
       title: String,
-      description: String
+      description: String,
+      date: String
     }
   ],
   tokens: [
