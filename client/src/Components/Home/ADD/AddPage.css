@@ -1,0 +1,11 @@
+.reg .regCon .form h2 {
+  word-spacing: 45px;
+  font-size: 30px;
+}
+
+.reg .regCon .form textarea {
+  width: 450px;
+  font-size: 30px;
+  padding-left: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  width: 1200px;
+  margin: 100px auto;
+  padding: 20px;
+}
+.home .homeCon {
+  width: 1200px;
+  margin: auto;
+}
+.home .homeCon .add {
+  margin-bottom: 50px;
+}
+.home .homeCon .add .addCon {
+  justify-content: space-between;
+  display: flex;
+}
+.home .homeCon .add button {
+  width: 200px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  color: #ffd;
+  background-color: rgb(53, 86, 194);
+  cursor: pointer;
+}
+
+.home .homeCon .add button:hover {
+  background-color: rgb(71, 175, 118);
+}
+
+.home .homeCon .add .addCon input {
+  width: 450px;
+  font-size: 30px;
+  padding-left: 10px;
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+}
+
+.home .homeCon .show {
+  width: 1200px;
+  padding: 5px;
+}
+
+.home .homeCon .show .show-data {
+  background-color: #d3b8b8;
+  margin-bottom: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s ease;
+  position: relative;
+}
+.home .homeCon .show .show-data:hover {
+  transform: scale(1.001);
+  box-shadow: 0 0 10px;
+}
+
+.home .homeCon .show .show-data h3 {
+  word-wrap: break-word;
+}
+
+.home .homeCon .show .show-data p {
+  margin-top: 10px;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+
+.home .homeCon .show .show-data .action {
+  display: flex;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}
+.home .homeCon .show .show-data .action i {
+  margin-right: 40px;
+  transition: 0.3s ease;
+  font-size: 23px;
+  display: none;
+}
+.home .homeCon .show .show-data .action i:hover {
+  color: rgb(190, 51, 51);
+  font-size: 24px;
+}
+
+.home .homeCon .show .show-data:hover .action i {
+  display: block;
+}
