@@ -6,8 +6,8 @@ import apiURL from "../config";
 const HomePage = () => {
   const api = apiURL.url;
   const pageNavigate = useNavigate();
-  //   const [searchTerm, setSearchTerm] = useState(""); // State to track search term
-  //   const [filteredNotes, setFilteredNotes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(""); // State to track search term
+  const [filteredNotes, setFilteredNotes] = useState([]); // State to store filtered notes
 
   const addNotes = () => {
     pageNavigate("/add");
@@ -27,7 +27,7 @@ const HomePage = () => {
     const res = await data.json();
     if (res.status === 205) {
       setUserData(res);
-      //   setFilteredNotes(res.data.addNotes); // Set filteredNotes initially with all notes
+      setFilteredNotes(res.data.addNotes); // Set filteredNotes initially with all notes
     } else {
       console.log("user not found");
     }
@@ -50,9 +50,9 @@ const HomePage = () => {
     const res = await data.json();
     if (res.status === 209) {
       setUserData(res); // Update user data after deletion
-      //   setFilteredNotes((prevNotes) =>
-      //     prevNotes.filter((note) => note._id !== addNoteId)
-      //   ); // Remove deleted note from filteredNotes
+      setFilteredNotes((prevNotes) =>
+        prevNotes.filter((note) => note._id !== addNoteId)
+      ); // Remove deleted note from filteredNotes
     } else {
       alert("Notes not deleted");
     }
@@ -62,17 +62,15 @@ const HomePage = () => {
     pageNavigate(`/update/${addNoteId}`);
   };
 
-  //   const handleSearch = (e) => {
-  //     setSearchTerm(e.target.value);
-  //     // Check if userData and userData.data are defined before accessing userData.data.addNotes
-  //     if (userData && userData.data && userData.data.addNotes) {
-  //       // Filter notes based on the search term
-  //       const filtered = userData.data.addNotes.filter((note) =>
-  //         note.title.toLowerCase().includes(e.target.value.toLowerCase())
-  //       );
-  //       setFilteredNotes(filtered);
-  //     }
-  //   };
+  // Function to handle search input change
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    // Filter notes based on the search term
+    const filtered = userData.data.addNotes.filter((note) =>
+      note.title.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFilteredNotes(filtered);
+  };
 
   return (
     <>
@@ -82,37 +80,35 @@ const HomePage = () => {
             <div className="addCon">
               <>
                 <button onClick={addNotes}>ADD</button>
-                {/* <input
+                <input
                   type="text"
                   placeholder="Search title here ..."
                   value={searchTerm}
                   onChange={handleSearch}
-                /> */}
+                />
                 {/* show new modified notes on top */}
               </>
             </div>
           </div>
           <div className="show">
-            {userData
-              ? userData.data.addNotes.map((addNote, index) => (
-                  <div key={index} className="show-data">
-                    <h3>{addNote.title}</h3>
-                    <p>{addNote.description}</p>
-                    <div className="action">
-                      <>
-                        <i
-                          onClick={() => deleteNotes(addNote._id, index)}
-                          className="fa-solid fa-trash"
-                        ></i>
-                        <i
-                          onClick={() => updateNotes(addNote._id, index)}
-                          className="fa-solid fa-pen-to-square"
-                        ></i>
-                      </>
-                    </div>
-                  </div>
-                ))
-              : ""}
+            {filteredNotes.map((addNote, index) => (
+              <div key={index} className="show-data">
+                <h3>{addNote.title}</h3>
+                <p>{addNote.description}</p>
+                <div className="action">
+                  <>
+                    <i
+                      onClick={() => deleteNotes(addNote._id, index)}
+                      className="fa-solid fa-trash"
+                    ></i>
+                    <i
+                      onClick={() => updateNotes(addNote._id, index)}
+                      className="fa-solid fa-pen-to-square"
+                    ></i>
+                  </>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
